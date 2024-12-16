@@ -1,0 +1,57 @@
+dn: ou=webapp,dc=company,dc=corp
+objectClass: organizationalUnit
+ou: webapp
+
+dn: ou=groups,ou=webapp,dc=company,dc=corp
+objectClass: organizationalUnit
+ou: groups
+
+dn: ou=people,ou=webapp,dc=company,dc=corp
+objectClass: organizationalUnit
+ou: people
+
+#### persons
+dn: cn=admin1,ou=people,ou=webapp,dc=company,dc=corp
+objectClass: person
+objectClass: inetOrgPerson
+sn: Admin1
+cn: admin1
+mail: admin1@company.corp
+userpassword: admin1
+
+dn: cn=admin2,ou=people,ou=webapp,dc=company,dc=corp
+objectClass: person
+objectClass: inetOrgPerson
+sn: Admin2
+cn: admin2
+mail: admin2@company.corp
+userpassword: admin2
+
+dn: cn=user1,ou=people,ou=webapp,dc=company,dc=corp
+objectClass: person
+objectClass: inetOrgPerson
+sn: User1
+cn: user1
+mail: user1@company.corp
+userpassword: user1
+
+dn: cn=user2,ou=people,ou=webapp,dc=company,dc=corp
+objectClass: person
+objectClass: inetOrgPerson
+sn: User2
+cn: user2
+mail: user2@company.corp
+userpassword: user2
+
+#### memberships
+dn: cn=admins,ou=groups,ou=webapp,dc=company,dc=corp
+objectClass: groupOfNames
+cn: admins
+member: cn=admin1,ou=people,ou=webapp,dc=company,dc=corp
+member: cn=admin2,ou=people,ou=webapp,dc=company,dc=corp
+
+dn: cn=users,ou=groups,ou=webapp,dc=company,dc=corp
+objectClass: groupOfNames
+cn: users
+member: cn=user1,ou=people,ou=webapp,dc=company,dc=corp
+member: cn=user2,ou=people,ou=webapp,dc=company,dc=corp

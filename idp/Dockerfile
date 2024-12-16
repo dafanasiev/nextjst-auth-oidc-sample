@@ -1,0 +1,1 @@
+FROM dexidp/dex:v2.41.1-alpine@sha256:bc7cfce7c17f52864e2bb2a4dc1d2f86a41e3019f6d42e81d92a301fad0c8a1d

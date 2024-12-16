@@ -1,0 +1,1 @@
+FROM osixia/openldap:stable@sha256:11a30708d9224291c39b2eed1d2620eb9687f4b8411e3b9dac6362ff634794c2
