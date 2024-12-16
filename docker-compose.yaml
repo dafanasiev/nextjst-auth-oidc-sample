@@ -1,4 +1,15 @@
 services:
+  webapp:
+    build: ./webapp
+    restart: always
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - idp
+    networks:
+      - fe-net
+      - dmz-net
+
   idp:
     build: ./idp
     restart: always

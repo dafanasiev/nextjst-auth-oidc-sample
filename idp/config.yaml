@@ -1,4 +1,4 @@
-issuer: http://idp:21556/dex
+issuer: http://idp:21556/idp
 storage:
   type: sqlite3
   config:
@@ -36,7 +36,7 @@ connectors:
     usernamePrompt: Login
 
     userSearch:
-      baseDN: ou=people,dc=company,dc=corp
+      baseDN: ou=people,ou=webapp,dc=company,dc=corp
       filter: "(objectClass=person)"
       username: cn
       # "DN" (case sensitive) is a special attribute name. It indicates that
@@ -47,7 +47,7 @@ connectors:
       nameAttr: sn
 
     groupSearch:
-      baseDN: ou=groups,dc=company,dc=corp
+      baseDN: ou=groups,ou=webapp,dc=company,dc=corp
       filter: "(objectClass=groupOfNames)"
 
       userMatchers:
@@ -62,6 +62,6 @@ connectors:
 staticClients:
 - id: webapp
   redirectURIs:
-  - 'http://localhost:3000/callback'
+  - 'http://localhost:3000/api/auth/callback/idp'
   name: 'Web App'
   secret: ZXhhbXBsZS1hcHAtc2VjcmV0
